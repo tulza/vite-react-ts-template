@@ -8,6 +8,7 @@ const Navigation = () => {
       <div className="mb-32 flex justify-center gap-8 p-8">
         <NavButton name="/" />
         <NavButton name="home" />
+        <NavButton name="mathgame" />
       </div>
     </>
   );
