@@ -11,7 +11,7 @@ const MathGame = () => {
       }, 1000);
     } else {
       setTimeout(() => {
-        settime("you fucking suck");
+        settime("time out ;w;");
       }, 1000);
     }
   }, [time]);
