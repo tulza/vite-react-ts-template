@@ -17,7 +17,8 @@ export default {
         background: "var(--background)",
         text: "var(--text)",
 
-        black: "var( --black)",
+        black: "var(--black)",
+        gray: "var(--gray)",
         white: "var(--white)",
       },
       screens: {},

@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 const Navigation = () => {
   return (
     <>
+      <div className="text-center">router</div>
       <div className="mb-32 flex justify-center gap-8 p-8">
         <NavButton name="/" />
         <NavButton name="home" />
-        <NavButton name="create" />
       </div>
     </>
   );
