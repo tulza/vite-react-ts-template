@@ -1,7 +1,7 @@
 import Create from "./Template/Create";
 import Navigation from "./Template/Navigation";
 import Template from "./Template/Template";
-import Default from "./Template/default";
+import Default from "./Template/Default";
 import "./styles.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
