@@ -1,11 +1,13 @@
-import React from "react";
-
 type InputProps = {
   value: string;
+  range: {
+    min: number;
+    max: number;
+  };
   set: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const InputRange = ({ value, set }: InputProps) => {
+const InputRange = ({ value, range, set }: InputProps) => {
   return (
     <>
       <div className="flex gap-4 ">
@@ -13,8 +15,8 @@ const InputRange = ({ value, set }: InputProps) => {
         <input
           className="z-10 ml-5"
           type="range"
-          min={-180}
-          max={180}
+          min={range.min}
+          max={range.max}
           value={value}
           onChange={(e) => {
             set(parseFloat(e.target.value) || 0);

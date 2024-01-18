@@ -12,6 +12,11 @@
   --gray: #212425;
 }
 
+html,
+#root {
+  @apply h-[100vh] w-[100vw];
+}
+
 html {
   background-color: var(--background);
   color: var(--text);

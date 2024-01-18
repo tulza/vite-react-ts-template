@@ -13,7 +13,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@entities/*": ["./src/entities/*"],
       "@api/*": ["./src/api/*"],
-      "@pages/*": ["./src/*"]
+      "@pages/*": ["./src/components/pages/*"]
       // "@template/*": ["src/*"],
     },
 
