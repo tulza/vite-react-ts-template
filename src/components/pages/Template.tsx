@@ -14,7 +14,6 @@ const Template = () => {
     setX(0);
     setY(0);
   };
-
   return (
     <div className="grid h-full w-full items-center justify-center">
       <div className="flex flex-col gap-8">

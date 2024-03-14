@@ -7,13 +7,19 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@asset/images/*": ["./src/images/*"],
+      "@asset/svgs/*": ["./src/svgs/*"],
+      "@asset/*": ["./src/asset/*"],
+      "@components/pages/*": ["./src/components/pages/*"],
+      "@components/hook/*": ["./src/components/hook/*"],
       "@components/*": ["./src/components/*"],
+      "@data/*": ["./src/data/*"],
       "@styles/*": ["./src/styles/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@entities/*": ["./src/entities/*"],
       "@api/*": ["./src/api/*"],
-      "@pages/*": ["./src/components/pages/*"]
+      "@pages/*": ["./src/components/pages/*"],
+      "@/*": ["./src/*"]
       // "@template/*": ["src/*"],
     },
 
