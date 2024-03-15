@@ -11,6 +11,7 @@
       "@svgs/*": ["./src/asset/svgs/*"],
       "@pages/*": ["./src/components/pages/*"],
       "@hook/*": ["./src/components/hook/*"],
+      "@cursor/*": ["./src/components/Cursor/*"],
       "@components/*": ["./src/components/*"],
       "@asset/*": ["./src/asset/*"],
       "@data/*": ["./src/data/*"],

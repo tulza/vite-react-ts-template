@@ -3,6 +3,7 @@ import PageNotFound from "@pages/PageNotFound";
 import WebsiteTransitionAnimation from "./TransitionAnim/WebsiteTransitionAnimation";
 import { AnimatePresence } from "framer-motion";
 import Home from "@components/pages/Home";
+import CursorContext from "@cursor/CursorContext";
 
 const AnimatedRoute = () => {
   const location = useLocation();
@@ -10,10 +11,12 @@ const AnimatedRoute = () => {
     <>
       <AnimatePresence mode="wait">
         <WebsiteTransitionAnimation key={location.pathname}>
-          <Routes location={location}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/*" element={<PageNotFound />} />
-          </Routes>
+          <CursorContext>
+            <Routes location={location}>
+              <Route path="/home" element={<Home />} />
+              <Route path="/*" element={<PageNotFound />} />
+            </Routes>
+          </CursorContext>
         </WebsiteTransitionAnimation>
       </AnimatePresence>
     </>

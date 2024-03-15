@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { CursorContexts } from "@cursor/CursorContext";
+import { useContext } from "react";
 
 const Navigation = () => {
   return (
@@ -13,12 +15,17 @@ const Navigation = () => {
 };
 
 const NavButton = ({ name }: { name: string }) => {
+  const { setCursor } = useContext(CursorContexts);
   return (
     <Link to={`${name}`}>
-      <motion.div whileHover="hover">
+      <motion.div
+        whileHover="hover"
+        onMouseEnter={() => setCursor("", "None")}
+        onMouseLeave={() => setCursor("", "Default")}
+      >
         <motion.div
-          className="outline-6 rounded-full border-4 border-background bg-element p-4 px-8 font-bold shadow-lg shadow-background outline outline-element"
-          variants={{ hover: { y: 10, borderColor: "var(--white)" } }}
+          className="outline-6 border-background bg-element shadow-background outline-element rounded-full border-4 p-4 px-8 font-bold shadow-lg outline"
+          variants={{ hover: { y: 10, borderColor: "#fff" } }}
         >
           <code>{name}</code>
         </motion.div>
