@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CursorContexts } from "@cursor/CursorContext";
 import { useContext } from "react";
+import { navigationEnter, navigationExit } from "@cursor/cursorHandle";
 
 const Navigation = () => {
   return (
@@ -20,8 +21,8 @@ const NavButton = ({ name }: { name: string }) => {
     <Link to={`${name}`}>
       <motion.div
         whileHover="hover"
-        onMouseEnter={() => setCursor("", "None")}
-        onMouseLeave={() => setCursor("", "Default")}
+        onMouseEnter={() => setCursor(...navigationEnter())}
+        onMouseLeave={() => setCursor(...navigationExit())}
       >
         <motion.div
           className="outline-6 border-background bg-element shadow-background outline-element rounded-full border-4 p-4 px-8 font-bold shadow-lg outline"

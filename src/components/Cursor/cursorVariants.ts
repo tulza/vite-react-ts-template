@@ -18,6 +18,20 @@ export const mouseVariant = (
       backgroundColor: "#fff0",
       fontSize: "0px",
     },
+    StaticFollow: {
+      opacity: 1,
+      height: 0,
+      width: 0,
+      x: mouseXPosition + 40,
+      y: mouseYPosition - 10,
+      backgroundColor: "#fff0",
+      fontSize: "20px",
+      transition: {
+        type: "easeIn",
+        bounce: 0.3,
+        duration: 0.1,
+      },
+    },
     Default: {
       opacity: 1,
       ...trackCursor(30),
@@ -25,7 +39,8 @@ export const mouseVariant = (
       backgroundColor: "#1e91d6",
       transition: {
         type: "spring",
-        mass: 0.6,
+        bounce: 0.3,
+        duration: 0.5,
       },
     },
     ReadMore: {
@@ -35,7 +50,7 @@ export const mouseVariant = (
       ...trackCursor(100),
       transition: {
         type: "spring",
-        mass: 0.2,
+        mass: 1,
       },
       outline: "1px solid #000",
     },

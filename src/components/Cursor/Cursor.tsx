@@ -4,6 +4,12 @@ import { useContext } from "react";
 import { CursorContexts } from "./CursorContext";
 import { mouseVariant } from "./cursorVariants";
 
+/**
+ * HOW TO USE: place element as a child of Cursor!
+ *
+ * @param {React.MutableRefObject<null>} containerRef - Reference to the container element
+ * @param {React.ReactNode} children - Child elements to render
+ */
 const Cursor = ({
   containerRef,
   children,
@@ -19,7 +25,7 @@ const Cursor = ({
   const mouse = useMouse(containerRef, {
     enterDelay: 100,
     leaveDelay: 500,
-    fps: 15,
+    fps: 30,
   });
   if (mouse.x != null) {
     mouseXPosition = mouse.x;
