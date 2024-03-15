@@ -12,15 +12,7 @@ export default {
       "5xl": "4.210rem",
     },
     extend: {
-      colors: {
-        element: "var(--element)",
-        background: "var(--background)",
-        text: "var(--text)",
-
-        black: "var(--black)",
-        gray: "var(--gray)",
-        white: "var(--white)",
-      },
+      colors: {},
       screens: {},
       transitionProperty: {},
     },
