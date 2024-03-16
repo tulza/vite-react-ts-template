@@ -12,6 +12,7 @@ import {
   Square,
   Red,
 } from "@cursor/cursorHandle";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Home = () => {
   const ref = useRef(null);
@@ -26,14 +27,29 @@ const Home = () => {
       >
         <Navigation />
         <div className="flex h-[1080px] w-full flex-col items-center justify-center gap-20">
-          <div
-            className="flex h-[100px] w-[100px] items-center justify-center rounded-full text-center outline "
+          <motion.div
+            className="flex h-[100px] w-[100px] cursor-pointer select-none items-center justify-center rounded-full text-center outline"
             onMouseEnter={() => setCursor(...DisableCursorEnter())}
             onMouseLeave={() => setCursor(...DisableCursorLeave())}
             onClick={() => setEnableCursor(!enableCursor)}
           >
-            Disable Cursor
-          </div>
+            <AnimatePresence mode="wait">
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key={enableCursor}
+                className="flex flex-col"
+                layout
+              >
+                {enableCursor ? (
+                  <div>Disable Cursor</div>
+                ) : (
+                  <div>Enable Cursor</div>
+                )}
+              </motion.span>
+            </AnimatePresence>
+          </motion.div>
           <div className="flex gap-20">
             <div
               className="h-[300px] w-[300px] outline"
