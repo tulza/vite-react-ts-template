@@ -7,11 +7,16 @@ import {
   readMoreLeave,
   pageEnter,
   pageLeave,
+  DisableCursorLeave,
+  DisableCursorEnter,
+  Square,
+  Red,
 } from "@cursor/cursorHandle";
 
 const Home = () => {
   const ref = useRef(null);
-  const { setCursor } = useContext(CursorContexts);
+  const { setCursor, setEnableCursor, enableCursor } =
+    useContext(CursorContexts);
   return (
     <Cursor containerRef={ref}>
       <div
@@ -20,13 +25,45 @@ const Home = () => {
         onMouseLeave={() => setCursor(...pageLeave())}
       >
         <Navigation />
-        <div className="flex h-[1080px] w-full items-center justify-center">
+        <div className="flex h-[1080px] w-full flex-col items-center justify-center gap-20">
           <div
-            className="h-[500px] w-[500px] outline"
-            onMouseEnter={() => setCursor(...readMoreEnter())}
+            className="flex h-[100px] w-[100px] items-center justify-center rounded-full text-center outline "
+            onMouseEnter={() => setCursor(...DisableCursorEnter())}
+            onMouseLeave={() => setCursor(...DisableCursorLeave())}
+            onClick={() => setEnableCursor(!enableCursor)}
+          >
+            Disable Cursor
+          </div>
+          <div className="flex gap-20">
+            <div
+              className="h-[300px] w-[300px] outline"
+              onMouseEnter={() => setCursor(...Red())}
+              onMouseLeave={() => setCursor(...readMoreLeave())}
+            >
+              Red
+            </div>
+            <div
+              className="h-[300px] w-[300px] outline"
+              onMouseEnter={() => setCursor(...readMoreEnter())}
+              onMouseLeave={() => setCursor(...readMoreLeave())}
+            >
+              read
+            </div>
+            <div
+              className="h-[300px] w-[300px] outline"
+              onMouseEnter={() => setCursor(...Square())}
+              onMouseLeave={() => setCursor(...readMoreLeave())}
+            >
+              black
+            </div>
+          </div>
+          <div
+            className="h-[300px] w-[300px] outline"
+            onMouseEnter={() => setCursor(...Square())}
             onMouseLeave={() => setCursor(...readMoreLeave())}
           >
-            read
+            Mask
+            <div></div>
           </div>
         </div>
       </div>

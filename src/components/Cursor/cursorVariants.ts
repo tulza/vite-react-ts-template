@@ -54,5 +54,39 @@ export const mouseVariant = (
       },
       outline: "1px solid #000",
     },
+    DisablePromt: {
+      opacity: 1,
+      fontSize: "24px",
+      color: "#fff",
+      backgroundColor: "#000",
+      ...trackCursor(80),
+      transition: {
+        type: "spring",
+        mass: 1,
+      },
+    },
+    Square: {
+      opacity: 1,
+      fontSize: "24px",
+      color: "#fff",
+      backgroundColor: "#000",
+      ...trackCursor(80),
+      borderRadius: 10,
+      transition: {
+        type: "spring",
+        mass: 1,
+      },
+    },
+    Red: {
+      opacity: 1,
+      fontSize: "24px",
+      backgroundColor: "#f00",
+      ...trackCursor(80),
+      borderRadius: 10,
+      transition: {
+        type: "spring",
+        mass: 1,
+      },
+    },
   };
 };

@@ -18,7 +18,7 @@ const Cursor = ({
   children: React.ReactNode;
 }) => {
   // Value
-  const { Text, cursorVariant } = useContext(CursorContexts);
+  const { Text, cursorVariant, enableCursor } = useContext(CursorContexts);
   // Logic
   let mouseXPosition = 0;
   let mouseYPosition = 0;
@@ -45,7 +45,7 @@ const Cursor = ({
     <>
       <motion.div
         className="pointer-events-none absolute z-[99] grid select-none place-content-center whitespace-nowrap rounded-full"
-        animate={cursorVariant}
+        animate={enableCursor ? cursorVariant : "None"}
         variants={mouseVariant(mouseXPosition, mouseYPosition)}
         transition={spring}
       >
